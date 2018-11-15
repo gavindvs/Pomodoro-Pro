@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500" prefWidth="300" style="-fx-background-size: 300 500; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10; -fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <Label layoutX="20.0" layoutY="14.0" text="POMODORO PRO" textFill="#bc2d19">
+         <font>
+            <Font name="Another Flight" size="57.0" />
+         </font>
+      </Label>
+      <Accordion layoutX="20.0" layoutY="90.0" prefHeight="379.0" prefWidth="260.0">
+        <panes>
+          <TitledPane prefHeight="91.0" prefWidth="260.0" style="-fx-background-color: #bc2d19;" text="Timers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="addTimer" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#openTimerCreator" prefHeight="43.0" prefWidth="101.0" style="-fx-background-radius: 15; -fx-background-color: #bc2d19; -fx-text-fill: #ffffff;" text="ADD A TIMER">
+                           <font>
+                              <Font name="Another Flight" size="18.0" />
+                           </font></Button>
+                        <Pane fx:id="timerCreator" layoutX="15.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <Label layoutX="2.0" text="Timer Name">
+                                 <font>
+                                    <Font name="Caviar Dreams Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField layoutY="24.0">
+                                 <font>
+                                    <Font name="Caviar Dreams" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Label layoutX="2.0" layoutY="74.0" text="Timer Duration">
+                                 <font>
+                                    <Font name="Caviar Dreams Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Spinner fx:id="timerHours" layoutX="19.0" layoutY="104.0" prefHeight="26.0" prefWidth="55.0" />
+                              <Spinner fx:id="timerMins" layoutX="103.0" layoutY="104.0" prefHeight="26.0" prefWidth="55.0" />
+                              <Label layoutX="2.0" layoutY="105.0" text="H">
+                                 <font>
+                                    <Font name="Caviar Dreams Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="84.0" layoutY="105.0" text="M">
+                                 <font>
+                                    <Font name="Caviar Dreams Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="1.0" layoutY="145.0" mnemonicParsing="false" onAction="#closeTimerCreator" prefHeight="43.0" prefWidth="67.0" style="-fx-background-radius: 15; -fx-background-color: #bc2d19; -fx-text-fill: #ffffff;" text="CANCEL">
+                                 <font>
+                                    <Font name="Another Flight" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="75.0" layoutY="145.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="67.0" style="-fx-background-radius: 15; -fx-background-color: #bc2d19; -fx-text-fill: #ffffff;" text="SAVE">
+                                 <font>
+                                    <Font name="Another Flight" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="timerMenu" layoutX="-1.0" layoutY="64.0" prefHeight="200.0" prefWidth="260.0">
+                           <children>
+                              <Line endX="130.0" layoutX="115.0" layoutY="15.0" startX="-100.0" />
+                              <Label layoutX="15.0" layoutY="29.0" text="Created Timers">
+                                 <font>
+                                    <Font name="Caviar Dreams Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="56.0" text="It's looking kinda empty...">
+                                 <font>
+                                    <Font name="Caviar Dreams Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane prefHeight="0.0" prefWidth="260.0" text="untitled 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+          <TitledPane text="untitled 3">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</AnchorPane>
