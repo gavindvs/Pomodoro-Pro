@@ -17,6 +17,11 @@ public class Main extends Application {
 	private double yOffset = 0;
 	
 	@Override
+	public void init() throws Exception {
+		//Do Nothing
+	}
+	
+	@Override
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
