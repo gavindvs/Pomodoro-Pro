@@ -24,15 +24,20 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			//Setup JavaFx project with loading the .fxml file and setting up the stage
 			Parent root = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
 			Scene scene = new Scene(root);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());		
+			scene.getStylesheets().add(getClass().getResource("/application/application.css").toExternalForm());		
 			primaryStage.setScene(scene);
 			scene.setFill(Color.TRANSPARENT);
+			//Make stage borderless
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.setTitle("Pomodoro Timer");
 			primaryStage.getIcons().add(new Image("/application/Pomodoro.png"));
+			//Create window's event handler for onMousePressed/onMouseDragged events
+			//Allows the user to move the borderless window
 			root.setOnMousePressed(new EventHandler<MouseEvent>() {
+				//Get scene's X and Y value upon mouse pressed and load it into xOffset and yOffset respectively
 	            @Override
 	            public void handle(MouseEvent event) {
 	                xOffset = event.getSceneX();
@@ -40,6 +45,8 @@ public class Main extends Application {
 	            }
 	        });
 			root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+				//Drag stage to the current location of the mouse's X and Y value
+				//Achieved by passing the difference between the mouse's current X, Y value and xOffset, yOffset
 	            @Override
 	            public void handle(MouseEvent event) {
 	                primaryStage.setX(event.getScreenX() - xOffset);
@@ -51,7 +58,6 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
 	public static void main(String[] args) {
 		launch(args);
 	}
